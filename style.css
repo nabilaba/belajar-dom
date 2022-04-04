@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+}
+.nabil-container-list {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+}
+
+.nabil-item {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+}
+
+a, .nabil-item-button {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
