@@ -7,7 +7,6 @@ for (var i = 0; i < document.getElementsByClassName("nabil-item").length; i++) {
     }
     document.getElementsByClassName("nabil-item")[i].style.border = "2px solid " + getRandomColor();
     document.getElementsByClassName("nabil-item")[i].style.height = "calc(69vh / 4)";
-    document.getElementsByClassName("nabil-item-text")[i].style.color = getRandomColor();
 }
 
 function getRandomColor() {
@@ -54,4 +53,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-demo1.Add(1);
+demo1.Add(5);
