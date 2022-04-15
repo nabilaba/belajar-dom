@@ -2,11 +2,11 @@
 Uncomment variable dibawah ini untuk mulai mengerjakan. dilarang mengganti nama variable yang dibuat.
 */
 
-// let quote = element untuk menampilkan quote
-// let author = element untuk menampilkan author
-// let citation = element untuk menampilkan citation
-// let year = element untuk menampilkan year
-// let button = tombol untuk melakuan generate random quote
+let quote = document.getElementById("random-quote"); // element untuk menampilkan quote
+let author = document.getElementsByClassName("author")[0]; // element untuk menampilkan author
+let citation = document.getElementsByClassName("citation")[0]; // element untuk menampilkan citation
+let year = document.getElementsByClassName("year")[0]; // element untuk menampilkan year
+let button = document.getElementsByClassName("btn btn-generate btn-success")[0]; // tombol untuk melakuan generate random quote
 
 var quotes = [
 	{
@@ -172,12 +172,27 @@ var quotes = [
 ];
 
 // TODO: answer here
+button.onclick = displayQuote;
 
 function getQuote() {
 	// TODO: answer here
+	return quotes[Math.floor(Math.random() * quotes.length)];
 }
-
 
 function displayQuote() {
 	// TODO: answer here
+	var hasilRandom = getQuote();
+	quote.innerHTML = hasilRandom.quote;
+	author.innerHTML = hasilRandom.author;
+	if (hasilRandom.citation !== undefined) {
+		citation.innerHTML = hasilRandom.citation;
+	} else {
+		citation.innerHTML = "";
+	}
+
+	if (hasilRandom.year !== undefined) {
+		year.innerHTML = hasilRandom.year;
+	} else {
+		year.innerHTML = "";
+	}
 }

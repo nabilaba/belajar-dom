@@ -10,21 +10,16 @@ function number(number) {
 
 //handle when the Del button, AC button and other operators (+, /, -, x) are pressed. It renders the operator into #input element
 function operator(operator) {
-    // TODO: answer here
-    if (operator === "+") {
-        document.getElementById("input").value += "+";
-    } else if (operator === "-") {
-        document.getElementById("input").value += "-";
-    } else if (operator === "*") {
-        document.getElementById("input").value += "*";
-    } else if (operator === "/") {
-        document.getElementById("input").value += "/";
-    } else if (operator === "AC") {
-        document.getElementById("input").value = "";
-    } else if (operator === "Del") {
-        document.getElementById("input").value = document.getElementById("input").value.slice(0, -1);
-    } else if (operator === ".") {
-        document.getElementById("input").value += ".";
+    let input = document.getElementById('input');
+    if (operator == 'Del') {
+        // TODO: answer here
+        input.value = input.value.slice(0, -1);
+    } else if (operator == "AC") {
+        // TODO: answer here
+        input.value = "";
+    } else {
+        // TODO: answer here
+        input.value += operator;
     }
 }
 
@@ -34,7 +29,9 @@ function calculate() {
     try {
         document.getElementById("input").value = eval(document.getElementById("input").value);
     } catch (e) {
-        document.getElementById("input").value = "0" + document.getElementById("input").value + "0";
-        document.getElementById("input").value = eval(document.getElementById("input").value);
+        document.getElementById("input").value = "Error";
+        setTimeout(() => {
+            document.getElementById("input").value = "";
+        }, 2000);
     }
 }
